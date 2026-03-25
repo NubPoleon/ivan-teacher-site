@@ -59,10 +59,10 @@ export type ResourceLink = {
   export const teacherProfile = {
     name: "Иван Добровольский",
     role: "Учитель информатики и математики",
-    school: "Здесь укажи школу / лицей / колледж",
-    city: "Здесь укажи город",
-    email: "teacher@example.com",
-    telegram: "@teacher_handle",
+    school: "Школа номер N",
+    city: "Томск",
+    email: "ivan.dobrovolskiy.95@gmail.com ",
+    telegram: "@Telivangram",
     photo: "/teacher-photo.jpg",
     greeting:
       "Этот сайт - единая рабочая точка для учащихся, родителей, коллег и проверяющих. Здесь собраны учебные материалы, дистанционные занятия, интерактивные задания и формы обратной связи.",
@@ -75,9 +75,9 @@ export type ResourceLink = {
       "iDroo для совместной работы на доске",
     ],
     achievements: [
-      "Сюда можно добавить курсы повышения квалификации",
-      "Сюда можно добавить участие в конкурсах и методических мероприятиях",
-      "Сюда можно добавить грамоты, сертификаты и публикации",
+      "Курсы повышения квалификации такие то",
+      "Участие в конкурсах и методических мероприятиях",
+      "Грамоты, сертификаты и публикации",
     ],
   }
   
@@ -103,7 +103,7 @@ export type ResourceLink = {
         "Тема полезна для дальнейшего изучения таблиц истинности, логических схем и заданий по информатике, где нужно анализировать условия и преобразовывать выражения.",
       ],
       slidesEmbed: "",
-      videoEmbed: "",
+      videoEmbed: "https://rutube.ru/play/embed/482f78dc5595cd2ccf2d18f8bb8bbb05/",
       formEmbed: "",
       boardUrl: "",
       boardLabel: "Открыть доску по теме",
@@ -127,9 +127,9 @@ export type ResourceLink = {
         "В этой теме учащиеся учатся переводить числа из одной системы счисления в другую и понимать, зачем вообще используются разные способы записи числа.",
         "Особое внимание уделяется двоичной системе счисления, так как она непосредственно связана с работой компьютера и цифровых устройств.",
       ],
-      slidesEmbed: "",
-      videoEmbed: "",
-      formEmbed: "",
+      slidesEmbed: "https://drive.google.com/file/d/1XNqfTH5IZndm-f-zxdsLpCFoC8Ghc7kW/preview",
+      videoEmbed: "https://rutube.ru/play/embed/8ce7c5df9e0ce4eb09d2da0170c365d2/",
+      formEmbed: "https://docs.google.com/forms/d/e/1FAIpQLScqy0lyP4-2QfjSEUB7bocQpN-vaUE-HjF2L2_PtmU-pikm6Q/viewform?embedded=true",
       boardUrl: "",
       boardLabel: "Открыть интерактивную доску",
       downloads: [
@@ -142,49 +142,7 @@ export type ResourceLink = {
         "Подготовься к итоговому тесту по теме.",
       ],
     },
-    {
-      slug: "algorithms",
-      title: "Алгоритмы",
-      category: "Информатика",
-      summary:
-        "Что такое алгоритм, как описывать шаги решения и находить ошибки в последовательности действий.",
-      description: [
-        "Тема вводит понятие алгоритма как точной последовательности действий. Учащиеся учатся формулировать инструкции, выделять шаги и понимать свойства хорошего алгоритма.",
-        "Далее эта база используется и в программировании, и в решении математических задач, где требуется строгий порядок действий.",
-      ],
-      slidesEmbed: "",
-      videoEmbed: "",
-      formEmbed: "",
-      boardUrl: "",
-      boardLabel: "Открыть доску-упражнение",
-      downloads: [{ label: "Скачать рабочий лист", url: "" }],
-      homework: [
-        "Составь алгоритм приготовления простого блюда.",
-        "Найди ошибку в готовой последовательности действий.",
-        "Подумай, где в жизни ты используешь алгоритмы каждый день.",
-      ],
-    },
-    {
-      slug: "truth-tables",
-      title: "Таблицы истинности",
-      category: "Информатика",
-      summary:
-        "Построение таблиц истинности и анализ логических выражений по шагам.",
-      description: [
-        "После знакомства с булевой алгеброй учащиеся переходят к таблицам истинности. Это удобный инструмент для проверки сложных выражений и сравнения разных логических формул.",
-        "На этой теме важно выработать аккуратность: таблица строится пошагово, с разбиением выражения на части.",
-      ],
-      slidesEmbed: "",
-      videoEmbed: "",
-      formEmbed: "",
-      boardUrl: "",
-      boardLabel: "Открыть доску для практики",
-      downloads: [{ label: "Скачать шаблон таблицы истинности", url: "" }],
-      homework: [
-        "Построй 3 таблицы истинности для простых выражений.",
-        "Сравни два выражения и проверь, равносильны ли они.",
-      ],
-    },
+    
     {
       slug: "coordinate-plane",
       title: "Координатная плоскость",
@@ -195,7 +153,7 @@ export type ResourceLink = {
         "Учащиеся учатся ориентироваться на координатной плоскости, понимать расположение точки, подписывать оси и находить координаты по рисунку.",
         "Это базовая тема для дальнейшего перехода к графикам функций, аналитической геометрии и задачам с визуальным представлением данных.",
       ],
-      slidesEmbed: "",
+      slidesEmbed: "https://drive.google.com/file/d/1qkSPf9etfeyVTZhVtKGsyRoBY4a1clFs/preview",
       videoEmbed: "",
       formEmbed: "",
       boardUrl: "",
@@ -216,7 +174,7 @@ export type ResourceLink = {
         "Тема посвящена линейной функции и её графику. Учащиеся разбирают, как коэффициенты влияют на положение прямой, и учатся строить график по нескольким точкам.",
         "На этом материале удобно отрабатывать чтение графиков и связь между формулой и её визуальным представлением.",
       ],
-      slidesEmbed: "",
+      slidesEmbed: "https://drive.google.com/file/d/1qkSPf9etfeyVTZhVtKGsyRoBY4a1clFs/preview",
       videoEmbed: "",
       formEmbed: "",
       boardUrl: "",
@@ -248,11 +206,11 @@ export type ResourceLink = {
         "Система счисления - это способ записи чисел с использованием определённого набора символов. В десятичной системе мы используем 10 цифр, в двоичной - только 0 и 1.",
         "Для перевода из десятичной системы в двоичную используется деление на 2 с записью остатков. Для обратного перевода нужно разложить число по степеням основания.",
       ],
-      slidesEmbed: "",
-      videoEmbed: "",
-      miniQuizEmbed: "",
+      slidesEmbed: "https://drive.google.com/file/d/1XNqfTH5IZndm-f-zxdsLpCFoC8Ghc7kW/preview",
+      videoEmbed: "https://rutube.ru/play/embed/8ce7c5df9e0ce4eb09d2da0170c365d2/",
+      miniQuizEmbed: "https://docs.google.com/forms/d/e/1FAIpQLScqy0lyP4-2QfjSEUB7bocQpN-vaUE-HjF2L2_PtmU-pikm6Q/viewform?embedded=true",
       interactiveUrl: "",
-      finalQuizEmbed: "",
+      finalQuizEmbed: "https://docs.google.com/forms/d/e/1FAIpQLScqy0lyP4-2QfjSEUB7bocQpN-vaUE-HjF2L2_PtmU-pikm6Q/viewform?embedded=true",
       homework: [
         "Выполни ещё 5 переводов чисел самостоятельно.",
         "Повтори правила записи двоичных чисел.",
@@ -273,11 +231,11 @@ export type ResourceLink = {
         "Линейная функция имеет вид y = kx + b, где k отвечает за наклон прямой, а b - за точку пересечения с осью y.",
         "Чтобы построить график, удобно подставить несколько значений x, получить точки и соединить их прямой линией.",
       ],
-      slidesEmbed: "",
-      videoEmbed: "",
-      miniQuizEmbed: "",
+      slidesEmbed: "https://drive.google.com/file/d/1qkSPf9etfeyVTZhVtKGsyRoBY4a1clFs/preview",
+      videoEmbed: "https://rutube.ru/play/embed/f54da8e42384e191a2437a90e9b12790/",
+      miniQuizEmbed: "https://docs.google.com/forms/d/e/1FAIpQLScXor3V1Pcy0zKiDjOMWWc9_w2flYkj48x0rXa84DFsnSG3gw/viewform?embedded=true",
       interactiveUrl: "",
-      finalQuizEmbed: "",
+      finalQuizEmbed:  "https://docs.google.com/forms/d/e/1FAIpQLScXor3V1Pcy0zKiDjOMWWc9_w2flYkj48x0rXa84DFsnSG3gw/viewform?embedded=true",
       homework: [
         "Построй график функции y = 2x + 1.",
         "Определи по графику, чему равны k и b.",
@@ -384,10 +342,10 @@ export type ResourceLink = {
   ]
   
   export const feedbackForms = {
-    generalEmbed: "",
-    parentsEmbed: "",
+    generalEmbed: "https://docs.google.com/forms/d/e/1FAIpQLSf2gm6aL3yIOjqkFh40CrdFySrpfOLLEpWHeIl7ib4W_OUFvg/viewform?embedded=true",
+    parentsEmbed: "https://docs.google.com/forms/d/e/1FAIpQLSd0e3kujk5xwlmGjAZLBiJTIrCzzMw0e59lIwgIAXhJuIzzzg/viewform?embedded=true",
   }
-  
+
   export const faq = [
     {
       question: "Нужно ли регистрироваться, чтобы открыть материалы?",

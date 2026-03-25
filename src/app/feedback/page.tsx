@@ -10,15 +10,14 @@ export default function FeedbackPage() {
           Вопросы, обратная связь и контакты
         </h1>
         <p className="mt-4 max-w-4xl text-base leading-7 text-neutral-600">
-          Здесь можно встроить общую Google Form, отдельную форму для родителей
-          и оставить контактную информацию преподавателя.
+          Здесь можно оставить любое сообщение, пожелание и обарщение через Google Form
         </p>
       </section>
 
       <section className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
         <EmbedBlock
           title="Общая форма обратной связи"
-          description="Сюда вставляется основная Google Form для вопросов, комментариев и обращений."
+          description="Обращайтесь с любым вопросом"
           src={feedbackForms.generalEmbed}
           heightClassName="h-[620px]"
         />
@@ -57,7 +56,7 @@ export default function FeedbackPage() {
 
       <EmbedBlock
         title="Форма для родителей"
-        description="Здесь можно оставить отдельную форму именно для родителей."
+        description="Обращайтесь с любым вопросом"
         src={feedbackForms.parentsEmbed}
         heightClassName="h-[620px]"
       />
