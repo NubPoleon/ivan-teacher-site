@@ -35,10 +35,9 @@ export type ResourceLink = {
   export type TeacherPresentation = {
     title: string
     description: string
-    format: string
-    previewEmbed: string
-    driveUrl: string
-    downloadUrl: string
+    previewImage: string
+    panaboardUrl: string
+    activInspireUrl: string
   }
   
   export type BoardResource = {
@@ -56,12 +55,53 @@ export type ResourceLink = {
     url: string
   }
   
+  const NUMERAL_FILE_ID = "1XNqfTH5IZndm-f-zxdsLpCFoC8Ghc7kW"
+  const LINEAR_FILE_ID = "1qkSPf9etfeyVTZhVtKGsyRoBY4a1clFs"
+  
+  const NUMERAL_PREVIEW = `https://drive.google.com/file/d/${NUMERAL_FILE_ID}/preview`
+  const NUMERAL_VIEW = `https://drive.google.com/file/d/${NUMERAL_FILE_ID}/view?usp=sharing`
+  const NUMERAL_DOWNLOAD = `https://drive.google.com/uc?export=download&id=${NUMERAL_FILE_ID}`
+  const NUMERAL_VIDEO = "https://rutube.ru/play/embed/8ce7c5df9e0ce4eb09d2da0170c365d2/"
+  const NUMERAL_FORM =
+    "https://docs.google.com/forms/d/e/1FAIpQLScqy0lyP4-2QfjSEUB7bocQpN-vaUE-HjF2L2_PtmU-pikm6Q/viewform?embedded=true"
+  
+  const LINEAR_PREVIEW = `https://drive.google.com/file/d/${LINEAR_FILE_ID}/preview`
+  const LINEAR_VIEW = `https://drive.google.com/file/d/${LINEAR_FILE_ID}/view?usp=sharing`
+  const LINEAR_DOWNLOAD = `https://drive.google.com/uc?export=download&id=${LINEAR_FILE_ID}`
+  const LINEAR_VIDEO = "https://rutube.ru/play/embed/f54da8e42384e191a2437a90e9b12790/"
+  const LINEAR_FORM =
+    "https://docs.google.com/forms/d/e/1FAIpQLScXor3V1Pcy0zKiDjOMWWc9_w2flYkj48x0rXa84DFsnSG3gw/viewform?embedded=true"
+  
+  // Скрины для раздела "Учителям"
+  const NUMERAL_SCREENSHOT = "/numeral-systems.png"
+  const LINEAR_SCREENSHOT = "/linear-functions.jpg"
+  
+  // Ссылки на файлы для досок
+  const NUMERAL_PANABOARD_URL = ""
+  const NUMERAL_ACTIVINSPIRE_URL = "https://drive.google.com/file/d/11CnBZzou6hIyrFbfHSU6Trjk0JN6fwgT/view?usp=drive_link"
+  
+  const LINEAR_PANABOARD_URL = ""
+  const LINEAR_ACTIVINSPIRE_URL = "https://drive.google.com/file/d/1x0GhB5_JzNGOyHoeqghqm_ng4r6k1gpY/view?usp=drive_link"
+  
+  // Временные общие комплекты, чтобы не дублировать одно и то же вручную
+  const INFORMATICS_PREVIEW = NUMERAL_PREVIEW
+  const INFORMATICS_VIEW = NUMERAL_VIEW
+  const INFORMATICS_DOWNLOAD = NUMERAL_DOWNLOAD
+  const INFORMATICS_VIDEO = NUMERAL_VIDEO
+  const INFORMATICS_FORM = NUMERAL_FORM
+  
+  const MATH_PREVIEW = LINEAR_PREVIEW
+  const MATH_VIEW = LINEAR_VIEW
+  const MATH_DOWNLOAD = LINEAR_DOWNLOAD
+  const MATH_VIDEO = LINEAR_VIDEO
+  const MATH_FORM = LINEAR_FORM
+  
   export const teacherProfile = {
     name: "Иван Добровольский",
     role: "Учитель информатики и математики",
-    school: "Школа номер N",
+    school: "Школа № N",
     city: "Томск",
-    email: "ivan.dobrovolskiy.95@gmail.com ",
+    email: "ivan.dobrovolskiy.95@gmail.com",
     telegram: "@Telivangram",
     photo: "/teacher-photo.jpg",
     greeting:
@@ -70,14 +110,14 @@ export type ResourceLink = {
       "Я преподаю информатику и математику, делаю упор на понятные объяснения, цифровые инструменты и практику. На сайте можно быстро перейти к теме, открыть материалы, пройти тест и получить домашнее задание.",
     tools: [
       "Google Forms для тестов и обратной связи",
-      "Google Slides для презентаций и дистанционных уроков",
-      "Miro для mind map и интерактивных схем",
-      "iDroo для совместной работы на доске",
+      "Google Slides и Google Drive для презентаций",
+      "Rutube для видеообъяснений",
+      "Интерактивные задания внутри сайта для дистанционных уроков",
     ],
     achievements: [
-      "Курсы повышения квалификации такие то",
-      "Участие в конкурсах и методических мероприятиях",
-      "Грамоты, сертификаты и публикации",
+      "Курсы повышения квалификации",
+      "Участие в методических мероприятиях",
+      "Грамоты, сертификаты и педагогические материалы",
     ],
   }
   
@@ -100,20 +140,20 @@ export type ResourceLink = {
         "Базовые логические операции, высказывания, формулы, истинность выражений.",
       description: [
         "В этой теме учащиеся знакомятся с логическими высказываниями и основными логическими операциями: НЕ, И, ИЛИ. Важно научиться не просто запоминать обозначения, а понимать, как строится логическое выражение и как меняется его результат.",
-        "Тема полезна для дальнейшего изучения таблиц истинности, логических схем и заданий по информатике, где нужно анализировать условия и преобразовывать выражения.",
+        "Тема полезна для дальнейшего изучения логических схем, условий и анализа составных выражений в заданиях по информатике.",
       ],
-      slidesEmbed: "",
-      videoEmbed: "https://rutube.ru/play/embed/482f78dc5595cd2ccf2d18f8bb8bbb05/",
-      formEmbed: "",
+      slidesEmbed: INFORMATICS_PREVIEW,
+      videoEmbed: INFORMATICS_VIDEO,
+      formEmbed: INFORMATICS_FORM,
       boardUrl: "",
       boardLabel: "Открыть доску по теме",
       downloads: [
-        { label: "Скачать памятку по теме", url: "" },
-        { label: "Скачать презентацию", url: "" },
+        { label: "Скачать памятку по теме", url: INFORMATICS_DOWNLOAD },
+        { label: "Скачать презентацию", url: INFORMATICS_DOWNLOAD },
       ],
       homework: [
         "Повтори обозначения логических операций.",
-        "Реши 5 простых примеров на преобразование выражений.",
+        "Реши 5 простых примеров на логические выражения.",
         "Подготовься к мини-тесту по высказываниям.",
       ],
     },
@@ -127,14 +167,14 @@ export type ResourceLink = {
         "В этой теме учащиеся учатся переводить числа из одной системы счисления в другую и понимать, зачем вообще используются разные способы записи числа.",
         "Особое внимание уделяется двоичной системе счисления, так как она непосредственно связана с работой компьютера и цифровых устройств.",
       ],
-      slidesEmbed: "https://drive.google.com/file/d/1XNqfTH5IZndm-f-zxdsLpCFoC8Ghc7kW/preview",
-      videoEmbed: "https://rutube.ru/play/embed/8ce7c5df9e0ce4eb09d2da0170c365d2/",
-      formEmbed: "https://docs.google.com/forms/d/e/1FAIpQLScqy0lyP4-2QfjSEUB7bocQpN-vaUE-HjF2L2_PtmU-pikm6Q/viewform?embedded=true",
+      slidesEmbed: NUMERAL_PREVIEW,
+      videoEmbed: NUMERAL_VIDEO,
+      formEmbed: NUMERAL_FORM,
       boardUrl: "",
       boardLabel: "Открыть интерактивную доску",
       downloads: [
-        { label: "Скачать карточку перевода чисел", url: "" },
-        { label: "Скачать тренировочный лист", url: "" },
+        { label: "Скачать карточку перевода чисел", url: NUMERAL_DOWNLOAD },
+        { label: "Скачать тренировочный лист", url: NUMERAL_DOWNLOAD },
       ],
       homework: [
         "Переведи 6 чисел из десятичной системы в двоичную.",
@@ -142,7 +182,6 @@ export type ResourceLink = {
         "Подготовься к итоговому тесту по теме.",
       ],
     },
-    
     {
       slug: "coordinate-plane",
       title: "Координатная плоскость",
@@ -153,12 +192,12 @@ export type ResourceLink = {
         "Учащиеся учатся ориентироваться на координатной плоскости, понимать расположение точки, подписывать оси и находить координаты по рисунку.",
         "Это базовая тема для дальнейшего перехода к графикам функций, аналитической геометрии и задачам с визуальным представлением данных.",
       ],
-      slidesEmbed: "https://drive.google.com/file/d/1qkSPf9etfeyVTZhVtKGsyRoBY4a1clFs/preview",
-      videoEmbed: "",
-      formEmbed: "",
+      slidesEmbed: MATH_PREVIEW,
+      videoEmbed: MATH_VIDEO,
+      formEmbed: MATH_FORM,
       boardUrl: "",
       boardLabel: "Открыть координатную доску",
-      downloads: [{ label: "Скачать лист с координатной сеткой", url: "" }],
+      downloads: [{ label: "Скачать лист с координатной сеткой", url: MATH_DOWNLOAD }],
       homework: [
         "Построй 8 точек на координатной плоскости.",
         "Подпиши координаты уже отмеченных точек.",
@@ -174,14 +213,14 @@ export type ResourceLink = {
         "Тема посвящена линейной функции и её графику. Учащиеся разбирают, как коэффициенты влияют на положение прямой, и учатся строить график по нескольким точкам.",
         "На этом материале удобно отрабатывать чтение графиков и связь между формулой и её визуальным представлением.",
       ],
-      slidesEmbed: "https://drive.google.com/file/d/1qkSPf9etfeyVTZhVtKGsyRoBY4a1clFs/preview",
-      videoEmbed: "",
-      formEmbed: "",
+      slidesEmbed: LINEAR_PREVIEW,
+      videoEmbed: LINEAR_VIDEO,
+      formEmbed: LINEAR_FORM,
       boardUrl: "",
       boardLabel: "Открыть доску с графиками",
       downloads: [
-        { label: "Скачать конспект по линейной функции", url: "" },
-        { label: "Скачать тренировочные задания", url: "" },
+        { label: "Скачать конспект по линейной функции", url: LINEAR_DOWNLOAD },
+        { label: "Скачать тренировочные задания", url: LINEAR_DOWNLOAD },
       ],
       homework: [
         "Построй графики двух линейных функций.",
@@ -206,11 +245,11 @@ export type ResourceLink = {
         "Система счисления - это способ записи чисел с использованием определённого набора символов. В десятичной системе мы используем 10 цифр, в двоичной - только 0 и 1.",
         "Для перевода из десятичной системы в двоичную используется деление на 2 с записью остатков. Для обратного перевода нужно разложить число по степеням основания.",
       ],
-      slidesEmbed: "https://drive.google.com/file/d/1XNqfTH5IZndm-f-zxdsLpCFoC8Ghc7kW/preview",
-      videoEmbed: "https://rutube.ru/play/embed/8ce7c5df9e0ce4eb09d2da0170c365d2/",
-      miniQuizEmbed: "https://docs.google.com/forms/d/e/1FAIpQLScqy0lyP4-2QfjSEUB7bocQpN-vaUE-HjF2L2_PtmU-pikm6Q/viewform?embedded=true",
+      slidesEmbed: NUMERAL_PREVIEW,
+      videoEmbed: NUMERAL_VIDEO,
+      miniQuizEmbed: NUMERAL_FORM,
       interactiveUrl: "",
-      finalQuizEmbed: "https://docs.google.com/forms/d/e/1FAIpQLScqy0lyP4-2QfjSEUB7bocQpN-vaUE-HjF2L2_PtmU-pikm6Q/viewform?embedded=true",
+      finalQuizEmbed: NUMERAL_FORM,
       homework: [
         "Выполни ещё 5 переводов чисел самостоятельно.",
         "Повтори правила записи двоичных чисел.",
@@ -231,11 +270,11 @@ export type ResourceLink = {
         "Линейная функция имеет вид y = kx + b, где k отвечает за наклон прямой, а b - за точку пересечения с осью y.",
         "Чтобы построить график, удобно подставить несколько значений x, получить точки и соединить их прямой линией.",
       ],
-      slidesEmbed: "https://drive.google.com/file/d/1qkSPf9etfeyVTZhVtKGsyRoBY4a1clFs/preview",
-      videoEmbed: "https://rutube.ru/play/embed/f54da8e42384e191a2437a90e9b12790/",
-      miniQuizEmbed: "https://docs.google.com/forms/d/e/1FAIpQLScXor3V1Pcy0zKiDjOMWWc9_w2flYkj48x0rXa84DFsnSG3gw/viewform?embedded=true",
+      slidesEmbed: LINEAR_PREVIEW,
+      videoEmbed: LINEAR_VIDEO,
+      miniQuizEmbed: LINEAR_FORM,
       interactiveUrl: "",
-      finalQuizEmbed:  "https://docs.google.com/forms/d/e/1FAIpQLScXor3V1Pcy0zKiDjOMWWc9_w2flYkj48x0rXa84DFsnSG3gw/viewform?embedded=true",
+      finalQuizEmbed: LINEAR_FORM,
       homework: [
         "Построй график функции y = 2x + 1.",
         "Определи по графику, чему равны k и b.",
@@ -246,31 +285,20 @@ export type ResourceLink = {
   
   export const teacherPresentations: TeacherPresentation[] = [
     {
-      title: "Булева алгебра - урок и практика",
-      description:
-        "Презентация для урока с базовыми логическими операциями и заданиями на закрепление.",
-      format: "Google Slides / PDF",
-      previewEmbed: "",
-      driveUrl: "",
-      downloadUrl: "",
-    },
-    {
       title: "Системы счисления - объяснение и тренажёр",
       description:
         "Материал для объяснения темы и проведения короткой самостоятельной работы.",
-      format: "Google Slides / PDF",
-      previewEmbed: "",
-      driveUrl: "",
-      downloadUrl: "",
+      previewImage: NUMERAL_SCREENSHOT,
+      panaboardUrl: NUMERAL_PANABOARD_URL,
+      activInspireUrl: NUMERAL_ACTIVINSPIRE_URL,
     },
     {
       title: "Линейные функции - графики и разбор",
       description:
         "Презентация с примерами построения графиков и заданиями для класса.",
-      format: "Google Slides / PDF",
-      previewEmbed: "",
-      driveUrl: "",
-      downloadUrl: "",
+      previewImage: LINEAR_SCREENSHOT,
+      panaboardUrl: LINEAR_PANABOARD_URL,
+      activInspireUrl: LINEAR_ACTIVINSPIRE_URL,
     },
   ]
   
@@ -281,15 +309,15 @@ export type ResourceLink = {
         "Онлайн-доска для совместной работы, решения примеров и разбора ошибок.",
       type: "iDroo",
       access: "по ссылке, без регистрации - если включён гостевой доступ",
-      url: "",
+      url: "https://app.idroo.com/ru/boards/HLpmGkUXMJ",
     },
     {
-      title: "Miro - mind map по логике и алгоритмам",
+      title: "Miro - mind map по логике и математике",
       description:
-        "Интерактивная карта темы с ветками, примерами и опорными схемами.",
+        "Интерактивная доска или карта темы для просмотра и самостоятельной работы.",
       type: "Miro",
       access: "просмотр по публичной ссылке",
-      url: "",
+      url: "https://miro.com/app/live-embed/uXjVGrmnbp0=/?embedMode=view_only_without_ui&moveToViewport=-581%2C-2376%2C2132%2C1299&embedId=741740655094",
     },
   ]
   
@@ -314,16 +342,16 @@ export type ResourceLink = {
     {
       title: "Сценарий урока",
       description: "Шаблон структуры урока с этапами и цифровыми инструментами.",
-      url: "",
+      url: NUMERAL_VIEW,
     },
     {
       title: "Рабочий лист",
       description: "Печатный или цифровой лист для тренировки по теме.",
-      url: "",
+      url: LINEAR_VIEW,
     },
     {
       title: "Полезный внешний ресурс",
-      description: "Ссылка на проверенный источник с интерактивной практикой.",
+      description: "Ссылка на проверенный источник с учебными материалами.",
       url: "",
     },
   ]
@@ -342,10 +370,12 @@ export type ResourceLink = {
   ]
   
   export const feedbackForms = {
-    generalEmbed: "https://docs.google.com/forms/d/e/1FAIpQLSf2gm6aL3yIOjqkFh40CrdFySrpfOLLEpWHeIl7ib4W_OUFvg/viewform?embedded=true",
-    parentsEmbed: "https://docs.google.com/forms/d/e/1FAIpQLSd0e3kujk5xwlmGjAZLBiJTIrCzzMw0e59lIwgIAXhJuIzzzg/viewform?embedded=true",
+    generalEmbed:
+      "https://docs.google.com/forms/d/e/1FAIpQLSf2gm6aL3yIOjqkFh40CrdFySrpfOLLEpWHeIl7ib4W_OUFvg/viewform?embedded=true",
+    parentsEmbed:
+      "https://docs.google.com/forms/d/e/1FAIpQLSd0e3kujk5xwlmGjAZLBiJTIrCzzMw0e59lIwgIAXhJuIzzzg/viewform?embedded=true",
   }
-
+  
   export const faq = [
     {
       question: "Нужно ли регистрироваться, чтобы открыть материалы?",
